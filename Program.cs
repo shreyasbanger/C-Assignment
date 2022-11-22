@@ -1,5 +1,4 @@
-﻿using OpenQA.Selenium.Chrome;
-
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System;
@@ -155,30 +154,19 @@ namespace SeleniumAssignment
                 Console.WriteLine("All the Checkbox have  been selected");
             }
             else
-
             {
-
                 Console.WriteLine("All the Checkbox have  been dselected");
-
             }
-
-
         }
-
         public void ExerciseFive()
-
         {
             Console.WriteLine("Exercise5:");
             driver.FindElement(By.Id("openwindow")).Click();
             Thread.Sleep(4000);
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Console.WriteLine(" Window has popped up on the screen");
-
-
         }
-
         public void ExerciseSix()
-
         {
             Console.WriteLine("Exercise6:");
             driver.FindElement(By.Id("opentab")).Click();
@@ -187,45 +175,24 @@ namespace SeleniumAssignment
             driver.SwitchTo().Window(tabs[1]).Close();
             driver.SwitchTo().Window(tabs[0]);
             Console.WriteLine("You'r on the new page within a new tab in your web browser");
-
-
         }
-       
-
         public void ExerciseSeven()
-
         {
-            
             text = driver.FindElement(By.Id("name"));
             text.SendKeys("Shreyas");
             Thread.Sleep(1000);
             driver.FindElement(By.Id("alertbtn")).Submit();
             Thread.Sleep(1000);
             driver.SwitchTo().Alert().Accept();
-
-
-
-
-
-
-
         }
-
         public void ExerciseEight()
-
         {
             Console.WriteLine("Exercise8:");
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver; 
             js.ExecuteScript(String.Format("window.scrollTo({0}, {1})", 400, 627));
-
-
-
         }
-
         public void ExerciseNine()
-
         {
-            
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript(String.Format("window.scrollTo({0}, {1})", 400,1000));
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -237,30 +204,17 @@ namespace SeleniumAssignment
             Thread.Sleep(1000);
             action.MoveToElement(top).Perform();
             top.Click();
-
-
         }
-
         static void Main(string[] args)
-
         {
-
             driver.Manage().Window.Maximize();
-
             driver.Navigate().GoToUrl("http://www.qaclickacademy.com/practice.php");
-
             AutomationDriver o = new AutomationDriver();
-
             o.ExerciseOne(1);
-
             Thread.Sleep(1000);
-
             o.ExerciseOne(2);
-
             Thread.Sleep(1000);
-
             o.ExerciseOne(3);
-
             Thread.Sleep(1000);
             o.ExerciseTwo();
             Thread.Sleep(1000);
@@ -284,9 +238,5 @@ namespace SeleniumAssignment
             Thread.Sleep(1000);
             driver.Quit();
         }
-
-
-
     }
-
 }
