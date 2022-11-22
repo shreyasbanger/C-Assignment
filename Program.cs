@@ -8,127 +8,66 @@ using OpenQA.Selenium.Support.UI;
 using System.Runtime.Intrinsics.Arm;
 using System.Collections.Generic;
 using System.Runtime.Intrinsics.X86;
-
 namespace SeleniumAssignment
-
 {
-
-    public class AutomationDriver
-
+   public class AutomationDriver
     {
-
         static IWebDriver driver = new ChromeDriver();
-
         static IWebElement radio1, radio2, radio3;
         IWebElement textBox;
         IWebElement dropdown;
         IWebElement checkbox1,checkbox2,checkbox3;
         IWebElement text;
-      
-
         public void ExerciseOne(int n)
-
         {
             Console.WriteLine("Exercise1:");
-
             switch (n)
-
             {
-
                 case 1:
-
                     radio1 = driver.FindElement(By.CssSelector("#radio-btn-example > fieldset > label:nth-child(2) > input"));
-
                     radio1.Click();
-
                     if (radio1.GetAttribute("checked") == "true")
-
                     {
-
                         Console.WriteLine("Radio 1 Button is clicked");
-
                     }
-
                     else
-
                     {
-
                         Console.WriteLine("Radio 1 button is not clicked");
-
                     }
-
                     break;
-
-
-
                 case 2:
-
                     radio2 = driver.FindElement(By.CssSelector("#radio-btn-example > fieldset > label:nth-child(3) > input"));
-
                     radio2.Click();
-
                     if (radio2.GetAttribute("checked") == "true")
-
                     {
-
                         Console.WriteLine("Radio 2 Button is clicked");
-
                     }
-
                     else
-
                     {
-
                         Console.WriteLine("Radio 2 button is not clicked");
-
                     }
-
                     break;
-
-
-
                 case 3:
-
                     radio3 = driver.FindElement(By.CssSelector("#radio-btn-example > fieldset > label:nth-child(4) > input"));
-
                     radio3.Click();
-
                     if (radio3.GetAttribute("checked") == "true")
-
                     {
-
                         Console.WriteLine("Radio 3 Button is clicked");
-
                     }
-
                     else
-
                     {
-
                         Console.WriteLine("Radio 3 button is not clicked");
-
                     }
-
                     break;
-
             }
-
-
-
         }
-
         public void ExerciseTwo()
-
         {
             Console.WriteLine("Exercise2:");
             textBox = driver.FindElement(By.Id("autocomplete"));
             textBox.SendKeys("United States");
             Console.WriteLine("United states is entered");
-            
-    
-
         }
-
         public void ExerciseThree()
         {
             Console.WriteLine("Exercise3:");
@@ -143,80 +82,48 @@ namespace SeleniumAssignment
             selectElement.SelectByValue("option3");
             Console.WriteLine("Option3 is selected");
             Thread.Sleep(1000);
-
         }
-
-       
-
         public void ExerciseFour()
-
         {
             Console.WriteLine("Exercise 4:");
             checkbox1 = driver.FindElement(By.Id("checkBoxOption1"));
             checkbox1.Click();
             if (checkbox1.GetAttribute("checked") == "true")
-
-            {
-
+        {
                 Console.WriteLine("Option 1 checkbox has been selected");
-
             }
-
             else
-
             {
-
                 Console.WriteLine("Option 1 checkbox has not been selected");
-
             }
             Thread.Sleep(1000);
             checkbox1.Click();
             checkbox2 = driver.FindElement(By.Id("checkBoxOption2"));
             checkbox2.Click();
             if (checkbox2.GetAttribute("checked") == "true")
-
             {
-
                 Console.WriteLine("Option 2 checkbox has been selected");
-
             }
-
             else
-
             {
-
                 Console.WriteLine("Option 2 checkbox has not been selected");
-
             }
             Thread.Sleep(1000);
             checkbox2.Click();
             checkbox3 = driver.FindElement(By.Id("checkBoxOption3"));
             checkbox3.Click();
             if (checkbox3.GetAttribute("checked") == "true")
-
             {
-
                 Console.WriteLine("Option 3 checkbox has been selected");
-
             }
-
             else
-
             {
-
                 Console.WriteLine("Option 3 checkbox has not been selected");
-
             }
             Thread.Sleep(1000);
             checkbox3.Click();
-
-
-
-
         }
-
         public void ExerciseFourPointOne()
-
         {
             Console.WriteLine("Exercise 4.1:");
             checkbox1 = driver.FindElement(By.Id("checkBoxOption1"));
@@ -226,24 +133,15 @@ namespace SeleniumAssignment
             checkbox3 = driver.FindElement(By.Id("checkBoxOption3"));
             checkbox3.Click();
             if ((checkbox1.GetAttribute("checked") == "true") && (checkbox2.GetAttribute("checked") == "true") && (checkbox3.GetAttribute("checked") == "true"))
-
             {
-
                 Console.WriteLine("All the Checkbox have been selected");
-
             }
-
             else
-
             {
-
                 Console.WriteLine("All the Checkbox have not been selected");
-
             }
     }
-
         public void ExerciseFourPointTwo()
-
         {
             Console.WriteLine("Exercise 4.2:");
             checkbox1 = driver.FindElement(By.Id("checkBoxOption1"));
@@ -253,13 +151,9 @@ namespace SeleniumAssignment
             checkbox3 = driver.FindElement(By.Id("checkBoxOption3"));
             checkbox3.Click();
             if ((checkbox1.GetAttribute("checked") == "true") && (checkbox2.GetAttribute("checked") == "true") && (checkbox3.GetAttribute("checked") == "true"))
-
             {
-
                 Console.WriteLine("All the Checkbox have  been selected");
-
             }
-
             else
 
             {
